@@ -15,9 +15,9 @@ function Transactions() {
   if (error) return <p>error</p>;
 
   return data.transactions.map(({ amount, date, id }) => (
-    <div key={id}>
+    <div key={id} className="transaction">
       <p>
-        {date}: {amount}
+        {date}~~{amount}
       </p>
     </div>
   ));
@@ -28,7 +28,9 @@ export default function App() {
     <div className="App">
       <h1>My Transactions</h1>
       <h2>List of Transactions</h2>
-      <Transactions />
+      <div className="tcontainer">
+        <Transactions />
+      </div>
     </div>
   );
 }
